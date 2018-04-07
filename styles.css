@@ -8,6 +8,7 @@ header {
   color: white;
   border: solid 1px black;
   background: black;
+  font-style: italic;
 }
 
 main {
