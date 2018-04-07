@@ -22,3 +22,7 @@ h2 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+.user {
+  grid-column: 1/2;
+}
