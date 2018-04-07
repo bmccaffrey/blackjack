@@ -26,3 +26,7 @@ h2 {
 .user {
   grid-column: 1/2;
 }
+
+.dealer {
+  grid-column: 2/3;
+}
