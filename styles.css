@@ -17,3 +17,8 @@ main {
 }
 
 h1, h2, h3 { margin: 0;}
+
+h2 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
