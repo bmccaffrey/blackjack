@@ -9,3 +9,8 @@ header {
   border: solid 1px black;
   background: black;
 }
+
+main {
+  display: grid;
+  border: solid 1px black;
+}
