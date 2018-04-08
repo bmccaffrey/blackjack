@@ -58,3 +58,13 @@ function Deck(num) {
     }
   }
 }
+
+// 8 LOC
+Deck.prototype.shuffle = function() {
+  for (i=0; i<this.cards.length; i++) {
+    let num = Math.floor(Math.random() * this.cards.length);
+    let shuffledCard = this.cards.splice(i,1);
+    shuffledCard = shuffledCard[0];
+    this.cards.splice(num,0,shuffledCard);
+  }
+}
