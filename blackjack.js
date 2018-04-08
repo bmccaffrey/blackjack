@@ -41,7 +41,7 @@ Card.prototype.unicode = function() {
     uni += this.rank;
   }
   return uni;
-}
+};
 
 // 14 lines
 function Deck(num) {
@@ -67,7 +67,7 @@ Deck.prototype.shuffle = function() {
     shuffledCard = shuffledCard[0];
     this.cards.splice(num,0,shuffledCard);
   }
-}
+};
 
 // 5 LOC
 function Player() {
@@ -79,4 +79,13 @@ function Player() {
 // 1 LOC
 Player.prototype.deal = function() {
   this.hand.push(deck1.cards.shift());
+};
+
+// 7 LOC
+Player.prototype.total = function() {
+  total = 0;
+  for (i=0; i<this.hand.length; i++) {
+    total += this.hand[i].value();
+  }
+  return total;
 };
