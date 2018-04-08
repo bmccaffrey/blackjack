@@ -37,3 +37,7 @@ h3 {}
 .money {
   grid-row: 2/3;
 }
+
+.total {
+  grid-row: 3/4;
+}
