@@ -24,10 +24,16 @@ h2 {
   padding-bottom: 20px;
 }
 
+h3 {}
+
 .user {
   grid-column: 1/2;
 }
 
 .dealer {
   grid-column: 2/3;
+}
+
+.money {
+  grid-row: 2/3;
 }
