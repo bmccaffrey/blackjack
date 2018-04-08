@@ -42,3 +42,19 @@ Card.prototype.unicode = function() {
   }
   return uni;
 }
+
+// 14 lines
+function Deck(num) {
+  this.cards = [];
+  this.num = num;
+  let suit = ["Clubs", "Diamonds", "Hearts", "Spades"];
+  let rank = [2,3,4,5,6,7,8,9,10,'Jack','Queen','King','Ace'];
+  let array1 = [];
+  for (i=0; i<num; i++) {
+    for (j=0; j<suit.length; j++) {
+      for(k=0; k<rank.length; k++) {
+        this.cards.push(new Card(suit[j], rank[k]));
+      }
+    }
+  }
+}
