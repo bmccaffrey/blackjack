@@ -41,3 +41,7 @@ h3 {}
 .total {
   grid-row: 3/4;
 }
+
+label {
+  grid-row: 4/5;
+}
