@@ -45,3 +45,7 @@ h3 {}
 label {
   grid-row: 4/5;
 }
+
+input {
+  grid-row: 5/6;
+}
