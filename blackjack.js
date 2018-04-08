@@ -68,3 +68,10 @@ Deck.prototype.shuffle = function() {
     this.cards.splice(num,0,shuffledCard);
   }
 }
+
+// 5 LOC
+function Player() {
+  this.name = undefined;
+  this.money = 500;
+  this.hand = [];
+}
