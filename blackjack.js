@@ -75,3 +75,8 @@ function Player() {
   this.money = 500;
   this.hand = [];
 }
+
+// 1 LOC
+Player.prototype.deal = function() {
+  this.hand.push(deck1.cards.shift());
+};
