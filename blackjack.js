@@ -79,6 +79,7 @@ function Player() {
 // 1 LOC
 Player.prototype.deal = function() {
   this.hand.push(deck1.cards.shift());
+  this.displayCard();
 };
 
 // 7 LOC
