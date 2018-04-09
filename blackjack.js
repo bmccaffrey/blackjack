@@ -82,6 +82,13 @@ Player.prototype.deal = function() {
   this.displayCard();
 };
 
+// 5 LOC
+Player.prototype.displayCard = function() {
+  var dealt = document.getElementById('usercards');
+  var length = (this.hand.length) - 1;
+  dealt.innerHTML += this.hand[length].unicode();
+};
+
 // 7 LOC
 Player.prototype.total = function() {
   total = 0;
@@ -90,8 +97,10 @@ Player.prototype.total = function() {
   }
   return total;
 };
-Player.prototype.displayCard = function() {
-  var dealt = document.getElementById('usercards');
-  var length = (this.hand.length) - 1;
-  dealt.innerHTML += this.hand[length].unicode();
+
+// 5 LOC
+Player.prototype.displayTotal = function() {
+  var total = document.getElementsByClassName('total');
+  console.log(total);
+  total[0].textContent = "Total: " + p1.total();
 };
