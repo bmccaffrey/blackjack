@@ -89,3 +89,8 @@ Player.prototype.total = function() {
   }
   return total;
 };
+Player.prototype.displayCard = function() {
+  var dealt = document.getElementById('usercards');
+  var length = (this.hand.length) - 1;
+  dealt.innerHTML += this.hand[length].unicode();
+};
