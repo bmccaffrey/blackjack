@@ -49,3 +49,8 @@ label {
 input {
   grid-row: 5/6;
 }
+
+#yourcards {
+  font-size: 55pt;
+  color: lightgrey;
+}
