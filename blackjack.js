@@ -80,6 +80,7 @@ function Player() {
 Player.prototype.deal = function() {
   this.hand.push(deck1.cards.shift());
   this.displayCard();
+  this.displayTotal();
 };
 
 // 5 LOC
@@ -110,6 +111,4 @@ function test() {
   deck1.shuffle();
   p1.deal();
   p1.deal();
-  p1.displayCard();
-  p1.displayTotal();
 }
