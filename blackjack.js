@@ -121,6 +121,12 @@ function test() {
   dealer.deal();
   dealer.deal();
 
+  let wager = document.querySelector('input[name=bet]');
+  p1.money -= wager.value;
+  console.log(p1.money);
+  let bet = wager.value;
+  wager.value = '';
+
   const hit = document.querySelector("button[name=hit]");
   hit.addEventListener("click", function() {
     p1.deal();
