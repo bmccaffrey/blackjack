@@ -114,3 +114,13 @@ dealer.name = `.dealer`;
 
 let deck1 = new Deck(1);
 deck1.shuffle();
+
+function test() {
+  p1.deal();
+  p1.deal();
+  dealer.deal();
+  dealer.deal();
+ }
+
+const play = document.querySelector("button[name=play]");
+play.addEventListener("click", test);
