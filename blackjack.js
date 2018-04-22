@@ -101,15 +101,43 @@ Player.prototype.total = function() {
 
 // 5 LOC
 Player.prototype.displayTotal = function() {
-  var total = document.querySelector(`${this.name}.total`);
+  const total = document.querySelector(`${this.name}.total`);
   total.innerHTML = 'Total: ' + this.total();
 };
 
+Player.prototype.displayMoney = function() {
+  const
+}
+
 Player.prototype.bust = function() {
   if(this.total() > 21) {
+    this.bet = 0;
+    //reset();
     alert('Busted');
   }
 };
+
+function win() {
+  if ((dealer.total() > 21) || (p1.total() > dealer.total())) {
+    console.log(p1.money);
+    p1.money += (p1.bet *2);
+    console.log('player wins');
+  } else if (p1.total() === dealer.total()) {
+    p1.money += p1.bet;
+    console.log('push');
+  } else {
+    console.log('dealer wins');
+  }
+}
+
+
+function wager() {
+  let wager = document.querySelector('input[name=bet]');
+  p1.bet = Number(wager.value);
+  p1.money -= wager.value;
+  console.log(p1.money);
+  wager.value = '';
+}
 
 // Initialize/Instantiate
 let p1 = new Player();
@@ -121,9 +149,6 @@ dealer.name = '.dealer';
 let deck1 = new Deck(1);
 deck1.shuffle();
 
-let wager = document.querySelector('input[name=bet]');
-const bet = wager.value;
-
 // 15 LOC
 function test() {
   p1.deal();
@@ -131,34 +156,28 @@ function test() {
   dealer.deal();
   dealer.deal();
   
-  let wager = document.querySelector('input[name=bet]');
-  p1.money -= wager.value;
-  console.log(p1.money);
-  let bet = wager.value;
-  wager.value = '';
-
+  wager();
   const hit = document.querySelector('button[name=hit]');
   hit.addEventListener('click', function() {
     p1.deal();
     p1.bust();
+  });
+  const stand = document.querySelector('button[name=stand]');
+  stand.addEventListener('click', function() {
+    while ((dealer.total()<17) && (dealer.total()<=21)) {
+      dealer.deal();
+    }
+    win();
   });
 }
 
 const play = document.querySelector('button[name=play]');
 play.addEventListener('click', test);
 
-const stand = document.querySelector('button[name=stand]');
-stand.addEventListener('click', function() {
-  while(dealer.total()<17) {
-    dealer.deal();
-  }
-  win();
-});
-
-function win() {
-  if(p1.total() > dealer.total()) {
-    console.log('player wins')
-  } else {
-    console.log('dealer wins');
-  }
-}
+// const stand = document.querySelector('button[name=stand]');
+// stand.addEventListener('click', function() {
+//   while(dealer.total()<17) {
+//     dealer.deal();
+//   }
+//   win();
+// });
