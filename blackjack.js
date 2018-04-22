@@ -76,7 +76,7 @@ function Player() {
   this.hand = [];
 }
 
-// 1 LOC
+// 5 LOC
 Player.prototype.deal = function() {
   this.hand.push(deck1.cards.shift());
   this.displayCard();
@@ -85,7 +85,7 @@ Player.prototype.deal = function() {
 
 // 5 LOC
 Player.prototype.displayCard = function() {
-  var dealt = document.querySelector('.user.cards');
+  var dealt = document.querySelector(`${this.name}.cards`);
   var length = (this.hand.length) - 1;
   dealt.innerHTML += this.hand[length].unicode();
 };
@@ -101,14 +101,6 @@ Player.prototype.total = function() {
 
 // 5 LOC
 Player.prototype.displayTotal = function() {
-  var total = document.querySelector('.user.total');
-  total.innerHTML = "Total: " + p1.total();
+  var total = document.querySelector(`${this.name}.total`);
+  total.innerHTML = "Total: " + this.total();
 };
-
-function test() {
-  p1 = new Player();
-  deck1 = new Deck(1);
-  deck1.shuffle();
-  p1.deal();
-  p1.deal();
-}
