@@ -120,6 +120,11 @@ function test() {
   p1.deal();
   dealer.deal();
   dealer.deal();
+
+  const hit = document.querySelector("button[name=hit]");
+  hit.addEventListener("click", function() {
+    p1.deal();
+  });
  }
 
 const play = document.querySelector("button[name=play]");
