@@ -104,3 +104,13 @@ Player.prototype.displayTotal = function() {
   var total = document.querySelector(`${this.name}.total`);
   total.innerHTML = "Total: " + this.total();
 };
+
+// Initialize/Instantiate
+let p1 = new Player();
+p1.name = `.user`;
+
+let dealer = new Player();
+dealer.name = `.dealer`;
+
+let deck1 = new Deck(1);
+deck1.shuffle();
