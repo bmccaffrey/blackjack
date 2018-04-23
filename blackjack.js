@@ -147,6 +147,14 @@ function wager() {
   p1.displayMoney();
 }
 
+// 5 LOC
+function clearCards() {
+  for (let player of arrayPlayers) {
+    let dealt = document.querySelector(`${player.name}.cards`);
+    dealt.textContent = '';
+  }
+}
+
 // Initialize/Instantiate
 let p1 = new Player();
 p1.name = '.user';
@@ -154,6 +162,8 @@ p1.displayMoney();
 
 let dealer = new Player();
 dealer.name = '.dealer';
+
+const arrayPlayers = [p1, dealer];
 
 let deck1 = new Deck(1);
 deck1.shuffle();
@@ -167,6 +177,7 @@ const stand = document.querySelector('button[name=stand]');
 
 // 9 LOC
 function startRound() {
+  clearCards();
   initialCardsDealt();
   wager();
   hit.addEventListener('click', function() { p1.deal(); p1.bust(); });
