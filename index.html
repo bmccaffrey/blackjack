@@ -12,21 +12,27 @@
       <h1>Blackjack App</h1>
     </header>
     <main>
-      <h2 class="user">User</h2>
-      <div class="user cards"></div>
-      <h3 class="user money">Money</h3>
-      <h3 class="user total">Total</h3>
-
-      <h2 class="dealer">Dealer</h2>
-      <h3 class="dealer money">Money</h3>
-      <h3 class="dealer total">Total</h3>
+      <div class="ui-display">
+          <h2 class="user">User</h2>
+          <div class="user cards">&#x1F0A0&#x1F0A0</div>
+          <h3 class="user total">Total</h3>
+    
+          <h2 class="dealer">Dealer</h2>
+          <div class="dealer cards">&#x1F0A0&#x1F0A0</div>
+          <!-- <h3 class="dealer money">Money</h3> -->
+          <h3 class="dealer total">Total</h3>
+      </div>
       
-
-      <label for="bet">Your Bet</label>
-      <input type="number" name="bet" min="1">
-      <button name="hit">Hit</button>
-      <button>Stand</button>
       
+      <div class="ui-buttons">
+          <!-- <label for="bet">Your Bet</label> -->
+          <h3 class="money">Money</h3>
+          <input type="number" name="bet" min="1" placeholder="Bet amount" required>
+          <button name="hit" disabled>Hit</button>
+          <button name="stand" disabled>Stand</button>
+          <button type="submit" name="play">Play</button>
+      </div>
+
     </main>
     <script src="blackjack.js"></script>
   </body>

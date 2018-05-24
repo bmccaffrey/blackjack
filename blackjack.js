@@ -113,8 +113,7 @@ Player.prototype.displayMoney = function() {
 Player.prototype.bust = function() {
   if(this.total() > 21) {
     this.bet = 0;
-    //reset();
-    alert('Busted');
+    console.log('Busted');
   }
 };
 
@@ -130,6 +129,8 @@ function win() {
   } else {
     console.log('dealer wins');
   }
+  // p1.hand = [];
+  // dealer.hand = [];
 }
 
 function initialCardsDealt() { 
@@ -155,6 +156,12 @@ function clearCards() {
   }
 }
 
+function reset() {
+  p1.hand = [];
+  p1.bet = 0;
+  dealer.hand = [];
+}
+
 // Initialize/Instantiate
 let p1 = new Player();
 p1.name = '.user';
@@ -172,17 +179,22 @@ const play = document.querySelector('button[name=play]');
 play.addEventListener('click', startRound);
 
 const hit = document.querySelector('button[name=hit]');
+hit.addEventListener('click', function() { p1.deal(); p1.bust(); });
 
 const stand = document.querySelector('button[name=stand]');
-
-// 9 LOC
+stand.addEventListener('click', function() {
+  while ((dealer.total()<17) && (dealer.total()<=21)) {
+    dealer.deal();
+  }
+  win();
+});
+// 10 LOC
 function startRound() {
+  p1.hand = [];
+  dealer.hand = [];
   clearCards();
   initialCardsDealt();
   wager();
-  hit.addEventListener('click', function() { p1.deal(); p1.bust(); });
-  stand.addEventListener('click', function() {
-    while ((dealer.total()<17) && (dealer.total()<=21)) { dealer.deal(); }
-    win();
-  });
+  hit.disabled = false;
+  stand.disabled = false;
 }
